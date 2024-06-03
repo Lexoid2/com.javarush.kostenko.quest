@@ -1,0 +1,173 @@
+[
+  {
+    "id": 1,
+    "step": "Step 1: Mystical Glow",
+    "question": "You find a mysterious glow at your workplace that turns out to be a portal. What will you do?",
+
+    "options": {
+      "a": {
+        "text": "Investigate the glow.",
+        "outcome": "You move closer and feel yourself being pulled into the portal. You find yourself in an enchanted forest.",
+        "nextStep": 2
+      },
+
+      "b": {
+        "text": "Ignore it and continue working.",
+        "outcome": "You try to ignore it, but the glow gets brighter and pulls you in. You find yourself in an enchanted forest.",
+        "nextStep": 2
+      }
+    }
+  },
+
+  {
+    "id": 2,
+    "step": "Step 2: Enchanted Forest",
+    "question": "After passing through the portal, you find yourself in an enchanted forest with bioluminescent plants. What will you do?",
+
+    "options": {
+      "a": {
+        "text": "Explore the forest.",
+        "outcome": "You explore the forest and find another portal leading to an alien world.",
+        "nextStep": 3
+      },
+
+      "b": {
+        "text": "Try to go back.",
+        "outcome": "You try to return, but the portal is gone. You have to explore the forest and find another portal leading to an alien world.",
+        "nextStep": 3
+      }
+    }
+  },
+
+  {
+    "id": 3,
+    "step": "Step 3: Alien World",
+    "question": "The next portal takes you to an alien world with amazing landscapes and strange plants. What will you do?",
+
+    "options": {
+      "a": {
+        "text": "Investigate the plants.",
+        "outcome": "You find a plant that turns out to be intelligent and leads you to the next portal.",
+        "nextStep": 4
+      },
+
+      "b": {
+        "text": "Find a safe place to rest.",
+        "outcome": "The plants turn hostile and you are overwhelmed. You die.",
+        "nextStep": -1
+      },
+
+      "с": {
+        "text": "Try to go back.",
+        "outcome": "You are pulled into a mysterious cave by an unseen force.",
+        "nextStep": 4
+      }
+    }
+  },
+
+  {
+    "id": 4,
+    "step": "Step 4: Mysterious Cave",
+    "question": "You find yourself in a mysterious cave with glowing crystals and strange echoes. What will you do?",
+
+    "options": {
+      "a": {
+        "text": "Explore the cave.",
+        "outcome": "You find an ancient artifact that opens a portal to a prehistoric world.",
+        "nextStep": 5
+      },
+
+      "b": {
+        "text": "Find an exit.",
+        "outcome": "You walk through the cave and find a portal leading to a prehistoric world.",
+        "nextStep": 5
+      },
+
+      "с": {
+        "text": "Rest and gather strength.",
+        "outcome": "You decide to rest, but the cave begins to collapse. You barely escape through a portal, but are injured and unable to continue",
+        "nextStep": -1
+      }
+    }
+  },
+
+  {
+    "id": 5,
+    "step": "Step 5: Prehistoric World",
+    "question": "You are transported to a prehistoric world with dinosaurs and primeval nature. What will you do?",
+
+    "options": {
+      "a": {
+        "text": "Explore the area.",
+        "outcome": "You find a cave with drawings that show the way to the next portal.",
+        "nextStep": 6
+      },
+
+      "b": {
+        "text": "Hide from the dinosaurs.",
+        "outcome": "You find shelter, but discover a portal that leads to the world of robots.",
+        "nextStep": 6
+      }
+    }
+  },
+
+  {
+    "id": 6,
+    "step": "Step 6: World of Robots",
+    "question": "You find yourself in a world where everything is automated and controlled by robots. What will you do?",
+
+    "options": {
+      "a": {
+        "text": "Explore the robots.",
+        "outcome": "You discover a server room that controls the robots and opens a portal to a fantastical valley.",
+        "nextStep": 7
+      },
+
+      "b": {
+        "text": "Find a hiding place.",
+        "outcome": "You accidentally activate the robots' defense mechanism, and they destroy you.",
+        "nextStep": -1
+      }
+    }
+  },
+
+  {
+    "id": 7,
+    "step": "Step 7: Fantastical Valley",
+    "question": "You find yourself in a fantastical valley with giant flowers and magical creatures. What will you do?",
+
+    "options": {
+      "a": {
+        "text": "Explore the valley.",
+        "outcome": "You find a portal that leads back to the office.",
+        "nextStep": 8
+      },
+
+      "b": {
+        "text": "Hide and observe.",
+        "outcome": "You find shelter, but a portal opens right in front of you and pulls you back to the office.",
+        "nextStep": 8
+      }
+    }
+  },
+
+  {
+    "id": 8,
+    "step": "Step 8: Final Task",
+    "question": "At the end of your journey, you return to the office where you are given a final task. Will you complete it or put it off until tomorrow?",
+
+    "options": {
+      "a": {
+        "text": "Complete the task.",
+        "outcome": "You successfully complete the task, receive praise from your boss, and get a promotion.",
+        "nextStep": 9
+      },
+
+      "b": {
+        "text": "Put it off until tomorrow.",
+        "outcome": "The task turns out to be critical, and due to the delay, you are fired.",
+        "nextStep": -1
+      }
+    }
+  }
+]
