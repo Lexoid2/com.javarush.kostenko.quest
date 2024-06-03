@@ -57,7 +57,7 @@
         "nextStep": -1
       },
 
-      "с": {
+      "c": {
         "text": "Try to go back.",
         "outcome": "You are pulled into a mysterious cave by an unseen force.",
         "nextStep": 4
@@ -83,7 +83,7 @@
         "nextStep": 5
       },
 
-      "с": {
+      "c": {
         "text": "Rest and gather strength.",
         "outcome": "You decide to rest, but the cave begins to collapse. You barely escape through a portal, but are injured and unable to continue",
         "nextStep": -1
@@ -160,7 +160,7 @@
       "a": {
         "text": "Complete the task.",
         "outcome": "You successfully complete the task, receive praise from your boss, and get a promotion.",
-        "nextStep": 9
+        "nextStep": 0
       },
 
       "b": {
