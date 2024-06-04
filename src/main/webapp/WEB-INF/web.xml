@@ -6,6 +6,11 @@
 
     <display-name>Text Quest</display-name>
 
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>/resources/*</url-pattern>
+    </servlet-mapping>
+
     <welcome-file-list>
         <welcome-file>prologue.jsp</welcome-file>
     </welcome-file-list>
