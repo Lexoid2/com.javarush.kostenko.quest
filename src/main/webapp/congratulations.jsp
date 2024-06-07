@@ -16,7 +16,8 @@
             <jsp:useBean id="name" scope="request" class="java.lang.String" />
             <h1 class="display-4 text-center fw-bold">Congratulations, ${name}!</h1>
 
-            <p class="mt-4 fs-4">You have successfully completed the adventure and returned to the office. Great job!</p>
+            <p class="mt-4 fs-4">You have successfully completed the adventure
+                and returned to the office. Great job!</p>
 
             <form action="${pageContext.request.contextPath}/start-adventure" method="POST" class="mt-3">
                 <input type="hidden" name="stepId" value="1">
