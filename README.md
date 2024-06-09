@@ -19,13 +19,13 @@ It is recommended to run the application using Tomcat 9. When deploying, use the
 
 ## How to Run
 
-1. Ensure you have Java 8 installed.
-2. Build the project using Maven:
-```bash
-mvn clean install
-```
-3. Deploy the WAR file to Tomcat 9.
-4. Access the application at `http://localhost:8080/`.
+1. Убедитесь, что у вас установлена Java 8.
+2. Сборка проекта с использованием Maven:
+    ```bash
+    mvn clean install
+    ```
+3. Разверните файл WAR в Tomcat 9.
+4. Доступ к приложению осуществляется по адресу `http://localhost:8080/`.
 
 ## Key Files
 - **StartAdventureServlet.java:** The main servlet that handles the game logic.
@@ -35,7 +35,7 @@ mvn clean install
 - **questions.json:** JSON file containing the questions and options for the quest.
 
 ## Testing
-The project includes unit tests written using JUnit 5 and Mockito. To run the tests, use:
+The project includes unit tests written using JUnit 5 and Mockito. To run the tests, use: 
 ```bash
 mvn test
 ```
@@ -43,12 +43,14 @@ mvn test
 ## Dependencies
 The project uses the following dependencies:
 
-- **Servlet API**
-- **JSTL**
-- **Jackson Databind**
-- **Lombok**
-- **JUnit 5**
-- **Mockito**
+- **Servlet API**: For handling HTTP requests.
+- **JSTL**: For JSP support.
+- **Jackson Databind**: For JSON parsing.
+- **Lombok**: For reducing boilerplate code.
+- **JUnit 5**: For unit testing.
+- **Mockito**: For mocking in tests.
+- **SLF4J**: For logging.
+- **Log4j 2**: For logging implementation.
 
 ## License
 This project is licensed under the MIT License.

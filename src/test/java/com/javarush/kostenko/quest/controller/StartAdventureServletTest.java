@@ -5,6 +5,8 @@ import com.javarush.kostenko.quest.service.QuestionService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -20,6 +22,8 @@ import static org.mockito.Mockito.*;
 
 public class StartAdventureServletTest {
 
+    private static final Logger logger = LoggerFactory.getLogger(StartAdventureServletTest.class);
+
     private QuestionService questionService;
     private HttpServletRequest request;
     private HttpServletResponse response;
@@ -28,7 +32,7 @@ public class StartAdventureServletTest {
     private StartAdventureServlet startAdventureServlet;
 
     @BeforeEach
-    public void setUp() throws Exception {
+    void setUp() throws Exception {
         // Initializing mocks
         questionService = mock(QuestionService.class);
         request = mock(HttpServletRequest.class);
@@ -48,7 +52,7 @@ public class StartAdventureServletTest {
     }
 
     @Test
-    public void testDoPost_ValidScenario() throws ServletException, IOException {
+    void testDoPost_ValidScenario() throws ServletException, IOException {
         Mockito.lenient().when(request.getParameter("name")).thenReturn("TestPlayer");
         Mockito.lenient().when(request.getParameter("stepId")).thenReturn("1");
         Mockito.lenient().when(request.getParameter("option")).thenReturn("a");
@@ -63,6 +67,8 @@ public class StartAdventureServletTest {
         question.setOptions(options);
         Mockito.lenient().when(questionService.getQuestionById(1)).thenReturn(question);
 
+        logger.debug("Executing testDoPost_ValidScenario with name: TestPlayer, stepId: 1, option: a");
+
         startAdventureServlet.doPost(request, response);
 
         verify(session).setAttribute("playerName", "TestPlayer");
@@ -70,10 +76,12 @@ public class StartAdventureServletTest {
         verify(request).setAttribute("name", "TestPlayer");
         verify(request).setAttribute("nextStep", "2");
         verify(requestDispatcher).forward(request, response);
+
+        logger.debug("Completed testDoPost_ValidScenario successfully");
     }
 
     @Test
-    public void testDoPost_NoOptionSelected() throws ServletException, IOException {
+    void testDoPost_NoOptionSelected() throws ServletException, IOException {
         Mockito.lenient().when(request.getParameter("name")).thenReturn("TestPlayer");
         Mockito.lenient().when(request.getParameter("stepId")).thenReturn("1");
 
@@ -82,19 +90,27 @@ public class StartAdventureServletTest {
         question.setOptions(new HashMap<>());
         Mockito.lenient().when(questionService.getQuestionById(1)).thenReturn(question);
 
+        logger.debug("Executing testDoPost_NoOptionSelected with name: TestPlayer, stepId: 1");
+
         startAdventureServlet.doPost(request, response);
 
         verify(request).setAttribute("errorMessage", "Please select an option.");
         verify(requestDispatcher).forward(request, response);
+
+        logger.debug("Completed testDoPost_NoOptionSelected successfully");
     }
 
     @Test
-    public void testDoPost_MissingName() throws ServletException, IOException {
+    void testDoPost_MissingName() throws ServletException, IOException {
         Mockito.lenient().when(request.getParameter("name")).thenReturn(null);
         Mockito.lenient().when(session.getAttribute("playerName")).thenReturn(null);
+
+        logger.debug("Executing testDoPost_MissingName with no name parameter");
 
         startAdventureServlet.doPost(request, response);
 
         verify(response).sendRedirect("prologue.jsp");
+
+        logger.debug("Completed testDoPost_MissingName successfully");
     }
 }

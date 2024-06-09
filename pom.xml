@@ -25,11 +25,32 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <!-- JUnit Version -->
         <junit.jupiter.version>5.10.2</junit.jupiter.version>
+        <!-- Log4j Version -->
+        <log4j.version>2.23.1</log4j.version>
         <!-- Mockito Version -->
         <mockito.version>5.12.0</mockito.version>
     </properties>
 
     <dependencies>
+        <!-- Logging Dependencies -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j2-impl</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>2.0.13</version>
+        </dependency>
+
         <!-- Servlet API Dependencies -->
         <dependency>
             <groupId>jakarta.servlet.jsp</groupId>
@@ -109,6 +130,7 @@
                 <includes>
                     <include>**/*.json</include>
                     <include>**/images/**</include>
+                    <include>log4j2.properties</include>
                 </includes>
             </resource>
         </resources>
@@ -130,6 +152,21 @@
                 </configuration>
             </plugin>
 
+            <!-- Surefire Plugin for Testing -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
+
+                <configuration>
+                    <includes>
+                        <include>**/*Test.java</include>
+                    </includes>
+
+                    <argLine>-XX:+EnableDynamicAgentLoading -Xshare:off</argLine>
+                </configuration>
+            </plugin>
+
             <!-- WAR Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -147,21 +184,6 @@
                             </includes>
                         </resource>
                     </webResources>
-                </configuration>
-            </plugin>
-
-            <!-- Surefire Plugin for Testing -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.2.5</version>
-
-                <configuration>
-                    <includes>
-                        <include>**/*Test.java</include>
-                    </includes>
-
-                    <argLine>-XX:+EnableDynamicAgentLoading -Xshare:off</argLine>
                 </configuration>
             </plugin>
         </plugins>
