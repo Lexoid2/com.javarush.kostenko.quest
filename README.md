@@ -19,13 +19,13 @@ It is recommended to run the application using Tomcat 9. When deploying, use the
 
 ## How to Run
 
-1. Убедитесь, что у вас установлена Java 8.
-2. Сборка проекта с использованием Maven:
+1. Ensure you have Java 8 installed.
+2. Build the project using Maven:
     ```bash
     mvn clean install
     ```
-3. Разверните файл WAR в Tomcat 9.
-4. Доступ к приложению осуществляется по адресу `http://localhost:8080/`.
+3. Deploy the WAR file to Tomcat 9.
+4. Access the application at `http://localhost:8080/`.
 
 ## Key Files
 - **StartAdventureServlet.java:** The main servlet that handles the game logic.
