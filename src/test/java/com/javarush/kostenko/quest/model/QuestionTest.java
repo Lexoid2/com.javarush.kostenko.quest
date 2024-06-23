@@ -8,7 +8,7 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class QuestionTest {
+class QuestionTest {
 
     private Question question;
     private Question.Option option1;
